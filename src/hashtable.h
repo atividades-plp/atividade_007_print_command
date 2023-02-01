@@ -2,11 +2,17 @@
 #define HASH_HEADER
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#define INT 0
+
+typedef int vartype;
 
 typedef struct hnode
 {
-    int key;
+    char *key;
     int value;
+    char *name;
+    vartype type;
 } hnode;
 
 typedef struct hashtable
@@ -20,10 +26,10 @@ typedef struct hashtable
 hashtable *new_hashtable(int size);
 
 // Retorna o hash de uma chave
-int get_hash(int key, int size);
+int get_hash(char *key, int size);
 
 // Adiciona um novo nó a tabela hash
-void add_hash_node(hashtable *table, int value, int key);
+void add_hash_node(hashtable *table, int value, char *key, char *name, vartype type);
 
 // Imprime os elementos de uma tabela hash
 void print_hashtable(hashtable *table);
