@@ -34,4 +34,7 @@ void add_hash_node(hashtable *table, int value, char *key, char *name, vartype t
 // Imprime os elementos de uma tabela hash
 void print_hashtable(hashtable *table);
 
+// Busca por um elemento pela chave
+hnode *find(hashtable *table, char *key);
+
 #endif
